@@ -76,6 +76,8 @@ if which "$DCONF" > /dev/null 2>&1; then
         dset cursor-foreground-color "'#{{base00-hex}}'"
         dset use-theme-colors "false"
         dset use-theme-background "false"
+        
+        gsettings set org.gnome.Terminal.ProfilesList default $PROFILE_SLUG
 
         unset PROFILE_NAME
         unset PROFILE_SLUG
