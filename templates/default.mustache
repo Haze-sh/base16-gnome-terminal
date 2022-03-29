@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-{{!
-  Template adapted from here:
-  https://github.com/chriskempson/base16-builder/blob/master/templates/gnome-terminal/dark.sh.erb
-}}
+#{{!
+#  Template adapted from here:
+#  https://github.com/chriskempson/base16-builder/blob/master/templates/gnome-terminal/dark.sh.erb
+#}}
 # Base16 {{scheme-name}} - Gnome Terminal color scheme install script
 # {{scheme-author}}
 
@@ -76,6 +76,8 @@ if which "$DCONF" > /dev/null 2>&1; then
         dset cursor-foreground-color "'#{{base00-hex}}'"
         dset use-theme-colors "false"
         dset use-theme-background "false"
+        
+        gsettings set org.gnome.Terminal.ProfilesList default $PROFILE_SLUG
 
         unset PROFILE_NAME
         unset PROFILE_SLUG
